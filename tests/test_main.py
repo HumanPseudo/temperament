@@ -1,4 +1,3 @@
-import pytest
 from temperament.main import hello_world
 
 
