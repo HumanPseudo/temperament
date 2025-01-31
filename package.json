@@ -18,7 +18,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "express": "^4.21.2",
     "midi": "^2.0.0",
-    "tonal": "^6.4.0"
+    "tonal": "^6.4.0",
+    "ws": "^8.18.0"
   }
 }
