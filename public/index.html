@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDI WebSocket Visualizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js" defer></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-time MIDI Notes Visualizer</h1>
+    <p id="connection-status">Status: Disconnected</p>
+
+    <!-- Contenedor del canvas de p5.js -->
+    <div id="canvas-container"></div>
+
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script src="sketch.js"></script>
+    <!-- <script src="scripts/demo.js"></script> -->
+</body>
+</html>
