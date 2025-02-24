@@ -1,17 +1,18 @@
+import { WebSocketServer } from 'ws';
+
 class WSManager {
     constructor(server) {
-        this.clients = new Set();
-        server.on('connection', (ws) => {
-            this.clients.add(ws);
-            ws.on('close', () => this.clients.delete(ws));
+        this.wss = new WebSocketServer({ server });
+
+        this.wss.on('connection', (ws) => {
+            console.log('📡 Cliente conectado.');
         });
     }
 
     broadcast(data) {
-        const message = JSON.stringify(data);
-        this.clients.forEach(client => {
+        this.wss.clients.forEach((client) => {
             if (client.readyState === 1) {
-                client.send(message);
+                client.send(JSON.stringify(data));
             }
         });
     }
